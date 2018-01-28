@@ -24,6 +24,7 @@ class ViewController: UIViewController {
     var totalString = ""
     var currentExpression = "+"
     var noCommand = true
+    var count = 0;
     
     @IBOutlet weak var textView_work: UITextView!
     @IBOutlet weak var label_answer: UILabel!
@@ -103,6 +104,13 @@ class ViewController: UIViewController {
         textView_work.text = textView_work.text + " / "
         currentExpression = "/"
         total += Int(totalString)!
+        totalString = ""
+    }
+    
+    @IBAction func buttonMod(_ sender: Any) {
+        textView_work.text = textView_work.text + " % "
+        currentExpression = "%"
+        total %= Int(totalString)!
         totalString = ""
     }
     
