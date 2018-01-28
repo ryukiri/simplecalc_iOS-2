@@ -88,24 +88,33 @@ class ViewController: UIViewController {
     @IBAction func buttonMinus(_ sender: Any) {
         textView_work.text = textView_work.text + " - "
         currentExpression = "-"
-        noCommand = false
+        total += Int(totalString)!
+        totalString = ""
     }
     
     @IBAction func buttonMultiply(_ sender: Any) {
         textView_work.text = textView_work.text + " x "
         currentExpression = "x"
-        noCommand = false
+        total += Int(totalString)!
+        totalString = ""
     }
     
     @IBAction func buttonDivide(_ sender: Any) {
         textView_work.text = textView_work.text + " / "
         currentExpression = "/"
-        noCommand = false
+        total += Int(totalString)!
+        totalString = ""
     }
     
     @IBAction func buttonEquals(_ sender: Any) {
         if currentExpression == "+" {
             total += Int(totalString)!
+        } else if currentExpression == "-" {
+            total -= Int(totalString)!
+        } else if currentExpression == "x" {
+            total *= Int(totalString)!
+        } else if currentExpression == "/" {
+            total /= Int(totalString)!
         }
         
         totalString = ""
