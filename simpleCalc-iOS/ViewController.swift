@@ -83,7 +83,6 @@ class ViewController: UIViewController {
         currentExpression = "+"
         total += Int(totalString)!
         totalString = ""
-        //label_answer.text = String(total)
     }
     
     @IBAction func buttonMinus(_ sender: Any) {
