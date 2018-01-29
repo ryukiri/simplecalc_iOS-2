@@ -114,7 +114,7 @@ class ViewController: UIViewController {
     @IBAction func buttonMod(_ sender: Any) {
         textView_work.text = textView_work.text + " % "
         currentExpression = "%"
-        total %= Int(totalString)!
+        total += Int(totalString)!
         totalString = ""
     }
     
@@ -134,6 +134,8 @@ class ViewController: UIViewController {
             count += 1
             total += Int(totalString)!
             total = total / count
+        } else if currentExpression == "%" {
+            total %= Int(totalString)!
         }
         
         totalString = ""
