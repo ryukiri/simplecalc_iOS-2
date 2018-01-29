@@ -23,8 +23,7 @@ class ViewController: UIViewController {
     var total = 0
     var totalString = ""
     var currentExpression = "+"
-    var noCommand = true
-    var count = 0;
+    var count = 0
     
     @IBOutlet weak var textView_work: UITextView!
     @IBOutlet weak var label_answer: UILabel!
@@ -79,6 +78,11 @@ class ViewController: UIViewController {
         totalString += "9"
     }
     
+    @IBAction func buttonDot(_ sender: Any) {
+        //textView_work.text = textView_work.text + "."
+        //totalString += "."
+    }
+    
     @IBAction func buttonAdd(_ sender: Any) {
         textView_work.text = textView_work.text + " + "
         currentExpression = "+"
@@ -123,6 +127,13 @@ class ViewController: UIViewController {
             total *= Int(totalString)!
         } else if currentExpression == "/" {
             total /= Int(totalString)!
+        } else if currentExpression == "count" {
+            count += 1
+            total = count
+        } else if currentExpression == "avg" {
+            count += 1
+            total += Int(totalString)!
+            total = total / count
         }
         
         totalString = ""
@@ -134,8 +145,39 @@ class ViewController: UIViewController {
         label_answer.text = ""
         total = 0
         totalString = ""
+        count = 0
     }
     
+    @IBAction func buttonCount(_ sender: Any) {
+        textView_work.text = textView_work.text + " count "
+        currentExpression = "count"
+        count += 1
+        totalString = ""
+    }
+
+    @IBAction func buttonAvg(_ sender: Any) {
+        textView_work.text = textView_work.text + " avg "
+        currentExpression = "avg"
+        total += Int(totalString)!
+        count += 1
+        totalString = ""
+        print(total)
+        print(count)
+    }
     
+    @IBAction func buttonFact(_ sender: Any) {
+        let topNum = Int(totalString)!
+        print(topNum)
+        for i in stride(from: topNum, to: 1, by: -1) {
+            if (total == 0) {
+                total = topNum
+            } else {
+                total *= i
+            }
+        }
+        
+        label_answer.text = String(total)
+
+    }
 }
 

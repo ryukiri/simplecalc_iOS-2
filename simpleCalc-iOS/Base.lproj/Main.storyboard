@@ -31,7 +31,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="count"/>
                                 <connections>
-                                    <action selector="buttonClear:" destination="BYZ-38-t0r" eventType="touchDown" id="o2f-tu-Sd6"/>
+                                    <action selector="buttonCount:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2Pj-AA-b3p"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NKy-rK-FrC">
@@ -39,21 +39,13 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="avg"/>
                                 <connections>
-                                    <action selector="buttonClear:" destination="BYZ-38-t0r" eventType="touchDown" id="ewp-1y-hvH"/>
+                                    <action selector="buttonAvg:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gs1-xU-PwS"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lo4-k0-8k4">
                                 <rect key="frame" x="101" y="272" width="77" height="64"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="+/-"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Af2-8H-zjY">
-                                <rect key="frame" x="186" y="272" width="77" height="64"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="%"/>
-                                <connections>
-                                    <action selector="buttonMod:" destination="BYZ-38-t0r" eventType="touchDown" id="afJ-g3-tnh"/>
-                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DnA-QC-8Qc">
                                 <rect key="frame" x="282" y="272" width="77" height="64"/>
@@ -173,6 +165,7 @@
                                 <state key="normal" title="."/>
                                 <connections>
                                     <action selector="button1:" destination="BYZ-38-t0r" eventType="touchDown" id="lIJ-1N-dyg"/>
+                                    <action selector="buttonDot:" destination="BYZ-38-t0r" eventType="touchDown" id="7ft-Ik-FgG"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xh3-Af-SPL">
@@ -202,7 +195,15 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="fact"/>
                                 <connections>
-                                    <action selector="buttonClear:" destination="BYZ-38-t0r" eventType="touchDown" id="6uq-8C-Nbb"/>
+                                    <action selector="buttonFact:" destination="BYZ-38-t0r" eventType="touchUpInside" id="oAU-00-oTM"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VLN-Be-gWl">
+                                <rect key="frame" x="186" y="272" width="77" height="64"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="%"/>
+                                <connections>
+                                    <action selector="buttonMod:" destination="BYZ-38-t0r" eventType="touchUpInside" id="AzS-ZD-e2U"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -210,7 +211,6 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
-                        <outlet property="buttonMod" destination="Af2-8H-zjY" id="nl8-0a-nMr"/>
                         <outlet property="label_answer" destination="KxC-v7-rH0" id="35v-Uy-Fuw"/>
                         <outlet property="textView_work" destination="fTe-pf-KeV" id="xef-aM-l0R"/>
                     </connections>
