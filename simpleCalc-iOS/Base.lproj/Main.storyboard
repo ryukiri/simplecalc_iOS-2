@@ -206,12 +206,34 @@
                                     <action selector="buttonMod:" destination="BYZ-38-t0r" eventType="touchUpInside" id="AzS-ZD-e2U"/>
                                 </connections>
                             </button>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="qMN-bU-XUC">
+                                <rect key="frame" x="282" y="227" width="49" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="onSwitchListener:" destination="BYZ-38-t0r" eventType="valueChanged" id="pbT-BO-MRC"/>
+                                </connections>
+                            </switch>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fQX-lD-mI4">
+                                <rect key="frame" x="36" y="577" width="37" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Enter"/>
+                                <connections>
+                                    <action selector="buttonEnter:" destination="BYZ-38-t0r" eventType="touchDown" id="TZ7-h6-k3l"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="divideButton" destination="DnA-QC-8Qc" id="T4e-ho-EQJ"/>
+                        <outlet property="enterButton" destination="fQX-lD-mI4" id="zNw-Ng-4aO"/>
+                        <outlet property="equalsButton" destination="xh3-Af-SPL" id="Mag-Ue-RNd"/>
                         <outlet property="label_answer" destination="KxC-v7-rH0" id="35v-Uy-Fuw"/>
+                        <outlet property="minusButton" destination="Juf-jP-r5O" id="waE-Oh-hUS"/>
+                        <outlet property="multiplyButton" destination="e2B-6i-Afb" id="ysx-vh-Xnx"/>
+                        <outlet property="plusButton" destination="VmS-jw-KxO" id="1co-xf-1dx"/>
+                        <outlet property="rpn" destination="qMN-bU-XUC" id="gpQ-UJ-qsy"/>
                         <outlet property="textView_work" destination="fTe-pf-KeV" id="xef-aM-l0R"/>
                     </connections>
                 </viewController>

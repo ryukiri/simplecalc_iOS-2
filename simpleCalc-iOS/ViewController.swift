@@ -24,9 +24,22 @@ class ViewController: UIViewController {
     var totalString = ""
     var currentExpression = "+"
     var count = 0
+    var arr = [Int]()
+    @IBOutlet weak var rpn: UISwitch!
+    @IBOutlet weak var multiplyButton: UIButton!
+    @IBOutlet weak var minusButton: UIButton!
+    @IBOutlet weak var plusButton: UIButton!
+    @IBOutlet weak var divideButton: UIButton!
+    @IBOutlet weak var equalsButton: UIButton!
+    @IBOutlet weak var enterButton: UIButton!
     
     @IBOutlet weak var textView_work: UITextView!
     @IBOutlet weak var label_answer: UILabel!
+    
+    @IBAction func onSwitchListener(_ sender: Any) {
+        equalsButton.isEnabled = !equalsButton.isEnabled
+        enterButton.isEnabled = !enterButton.isEnabled
+    }
     
     @IBAction func button0(_ sender: Any) {
         textView_work.text = textView_work.text + " 0 "
@@ -86,21 +99,64 @@ class ViewController: UIViewController {
     @IBAction func buttonAdd(_ sender: Any) {
         textView_work.text = textView_work.text + " + "
         currentExpression = "+"
-        total += Int(totalString)!
+        if rpn.isOn {
+            arr.append(Int(totalString)!)
+            if currentExpression == "+" {
+                for i in arr {
+                    total += i
+                }
+            }
+            totalString = ""
+            label_answer.text = String(total)
+            textView_work.text = ""
+            count = 0
+            total = 0
+        } else {
+            total += Int(totalString)!
+        }
         totalString = ""
     }
     
     @IBAction func buttonMinus(_ sender: Any) {
         textView_work.text = textView_work.text + " - "
         currentExpression = "-"
-        total += Int(totalString)!
+        if rpn.isOn {
+            arr.append(Int(totalString)!)
+            if currentExpression == "-" {
+                for i in arr {
+                    total -= i
+                }
+            }
+            totalString = ""
+            label_answer.text = String(total)
+            textView_work.text = ""
+            count = 0
+            total = 0
+        } else {
+            total += Int(totalString)!
+        }
         totalString = ""
     }
     
     @IBAction func buttonMultiply(_ sender: Any) {
         textView_work.text = textView_work.text + " x "
         currentExpression = "x"
-        total += Int(totalString)!
+        if rpn.isOn {
+            arr.append(Int(totalString)!)
+            total = 1
+            if currentExpression == "x" {
+                for i in arr {
+                    total *= i
+                }
+            }
+            totalString = ""
+            label_answer.text = String(total)
+            textView_work.text = ""
+            count = 0
+            total = 0
+        } else {
+            total += Int(totalString)!
+        }
         totalString = ""
     }
     
@@ -119,27 +175,35 @@ class ViewController: UIViewController {
     }
     
     @IBAction func buttonEquals(_ sender: Any) {
-        if currentExpression == "+" {
-            total += Int(totalString)!
-        } else if currentExpression == "-" {
-            total -= Int(totalString)!
-        } else if currentExpression == "x" {
-            total *= Int(totalString)!
-        } else if currentExpression == "/" {
-            total /= Int(totalString)!
-        } else if currentExpression == "count" {
-            count += 1
-            total = count
-        } else if currentExpression == "avg" {
-            count += 1
-            total += Int(totalString)!
-            total = total / count
-        } else if currentExpression == "%" {
-            total %= Int(totalString)!
+        if rpn.isOn {
+            equalsButton.isEnabled = false
+        } else {
+            equalsButton.isEnabled = true
+            if currentExpression == "+" {
+                total += Int(totalString)!
+            } else if currentExpression == "-" {
+                total -= Int(totalString)!
+            } else if currentExpression == "x" {
+                total *= Int(totalString)!
+            } else if currentExpression == "/" {
+                total /= Int(totalString)!
+            } else if currentExpression == "count" {
+                count += 1
+                total = count
+            } else if currentExpression == "avg" {
+                count += 1
+                total += Int(totalString)!
+                total = total / count
+            } else if currentExpression == "%" {
+                total %= Int(totalString)!
+            }
+            
+            totalString = ""
+            label_answer.text = String(total)
+            textView_work.text = ""
+            count = 0
+            total = 0
         }
-        
-        totalString = ""
-        label_answer.text = String(total)
     }
     
     @IBAction func buttonClear(_ sender: Any) {
@@ -148,23 +212,53 @@ class ViewController: UIViewController {
         total = 0
         totalString = ""
         count = 0
+        arr = [Int]()
     }
     
     @IBAction func buttonCount(_ sender: Any) {
         textView_work.text = textView_work.text + " count "
         currentExpression = "count"
-        count += 1
+        arr.append(Int(totalString)!)
+        if rpn.isOn {
+            if currentExpression == "count" {
+                for i in arr {
+                    count += 1
+                }
+            }
+            totalString = ""
+            label_answer.text = String(count)
+            textView_work.text = ""
+            count = 0
+            total = 0
+        } else {
+            count += 1
+        }
         totalString = ""
     }
 
     @IBAction func buttonAvg(_ sender: Any) {
         textView_work.text = textView_work.text + " avg "
         currentExpression = "avg"
-        total += Int(totalString)!
-        count += 1
-        totalString = ""
-        print(total)
-        print(count)
+        
+        if rpn.isOn {
+            arr.append(Int(totalString)!)
+            if currentExpression == "avg" {
+                for i in arr {
+                    total += i
+                }
+            }
+            totalString = ""
+            label_answer.text = String(total/arr.count)
+            textView_work.text = ""
+            count = 0
+            total = 0
+        } else {
+            total += Int(totalString)!
+            count += 1
+            totalString = ""
+            print(total)
+            print(count)
+        }
     }
     
     @IBAction func buttonFact(_ sender: Any) {
@@ -179,7 +273,15 @@ class ViewController: UIViewController {
         }
         
         label_answer.text = String(total)
-
     }
+    
+    @IBAction func buttonEnter(_ sender: Any) {
+        if rpn.isOn {
+            arr.append(Int(totalString)!)
+            totalString = ""
+            textView_work.text = textView_work.text + "  "
+        }
+    }
+    
 }
 
