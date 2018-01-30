@@ -123,8 +123,13 @@ class ViewController: UIViewController {
         if rpn.isOn {
             arr.append(Int(totalString)!)
             if currentExpression == "-" {
+                var index = 0
                 for i in arr {
+                    if(index == 0) {
+                        total = i
+                    }
                     total -= i
+                    index += 1
                 }
             }
             totalString = ""
@@ -133,7 +138,12 @@ class ViewController: UIViewController {
             count = 0
             total = 0
         } else {
-            total += Int(totalString)!
+            if (count == 0) {
+                total += Int(totalString)!
+            } else {
+                total -= Int(totalString)!
+            }
+            count += 1
         }
         totalString = ""
     }
@@ -145,8 +155,14 @@ class ViewController: UIViewController {
             arr.append(Int(totalString)!)
             total = 1
             if currentExpression == "x" {
+                var index = 0
                 for i in arr {
+                    if index == 0 {
+                        total = i
+                    }
+                    
                     total *= i
+                    index += 1
                 }
             }
             totalString = ""
@@ -156,6 +172,7 @@ class ViewController: UIViewController {
             total = 0
         } else {
             total += Int(totalString)!
+            count += 1
         }
         totalString = ""
     }
