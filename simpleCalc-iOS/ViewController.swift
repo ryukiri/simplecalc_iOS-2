@@ -324,9 +324,9 @@ class ViewController: UIViewController {
             textView_work.text = textView_work.text + "  "
             
         }*/
-        let myVC = storyboard?.instantiateViewController(withIdentifier: "SecondVC") as! ViewController2
+        /*let myVC = storyboard?.instantiateViewController(withIdentifier: "SecondVC") as! ViewController2
         myVC.stringPassed = "TEST"
-        navigationController?.pushViewController(myVC, animated: true)
+        navigationController?.pushViewController(myVC, animated: true)*/
     }
     
     func updateHistory() {
@@ -340,7 +340,7 @@ class ViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         var vc2 = segue.destination as! ViewController2
-        vc2.labelText = "TEST"
+        vc2.history = history
     }
     
 }

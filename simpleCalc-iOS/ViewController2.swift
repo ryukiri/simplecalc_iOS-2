@@ -10,15 +10,16 @@ import UIKit
 
 class ViewController2: UIViewController {
     @IBOutlet weak var scrollView: UIScrollView!
-    @IBOutlet weak var label: UILabel!
-    var labelText: String!
-    var stringPassed = "LABEL"
+    var history: [String] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        label.text = labelText
-        //print(stringPassed)
-        //print(labelText)
+        
+        for index in 0...history.count - 1 {
+            let label = UILabel(frame: CGRect(x: 50, y: index * 25 + 50, width: 300, height: 40))
+            label.text = history[index]
+            scrollView.addSubview(label)
+        }
 
         // Do any additional setup after loading the view.
     }
@@ -30,7 +31,6 @@ class ViewController2: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         var vc = segue.destination as! ViewController
-        
     }
     
     /*
