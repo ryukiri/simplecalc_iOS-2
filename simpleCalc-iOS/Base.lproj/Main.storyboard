@@ -496,7 +496,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mtA-v7-pCV">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mtA-v7-pCV">
                                 <rect key="frame" x="26" y="20" width="34" height="30"/>
                                 <state key="normal" title="Back"/>
                                 <connections>
@@ -513,6 +513,7 @@
                             <constraint firstItem="u7a-ol-6FR" firstAttribute="top" secondItem="mtA-v7-pCV" secondAttribute="bottom" constant="8" symbolic="YES" id="HYR-NO-GMv"/>
                             <constraint firstItem="K2y-Ca-SY3" firstAttribute="bottom" secondItem="u7a-ol-6FR" secondAttribute="bottom" constant="20" id="Hq4-z7-QOG"/>
                             <constraint firstItem="K2y-Ca-SY3" firstAttribute="trailing" secondItem="u7a-ol-6FR" secondAttribute="trailing" constant="20" id="RmD-QA-aRh"/>
+                            <constraint firstItem="mtA-v7-pCV" firstAttribute="leading" secondItem="K2y-Ca-SY3" secondAttribute="leading" constant="26" id="rXr-ud-gy1"/>
                             <constraint firstItem="u7a-ol-6FR" firstAttribute="leading" secondItem="K2y-Ca-SY3" secondAttribute="leading" constant="20" id="scl-OJ-uf5"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="K2y-Ca-SY3"/>
