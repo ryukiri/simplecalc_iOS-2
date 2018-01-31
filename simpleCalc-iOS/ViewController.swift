@@ -27,7 +27,6 @@ class ViewController: UIViewController {
     var arr = [Int]()
     var history = [String]()
     var exhistory = [String]()
-    @IBOutlet weak var rpn: UISwitch!
     @IBOutlet weak var multiplyButton: UIButton!
     @IBOutlet weak var minusButton: UIButton!
     @IBOutlet weak var plusButton: UIButton!
