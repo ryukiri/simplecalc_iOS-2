@@ -38,10 +38,6 @@ class ViewController: UIViewController {
     @IBOutlet weak var textView_work: UITextView!
     @IBOutlet weak var label_answer: UILabel!
     
-    @IBAction func onSwitchListener(_ sender: Any) {
-        equalsButton.isEnabled = !equalsButton.isEnabled
-        enterButton.isEnabled = !enterButton.isEnabled
-    }
     
     @IBAction func button0(_ sender: Any) {
         textView_work.text = textView_work.text + " 0 "
@@ -101,48 +97,17 @@ class ViewController: UIViewController {
     @IBAction func buttonAdd(_ sender: Any) {
         textView_work.text = textView_work.text + " + "
         currentExpression = "+"
-        if rpn.isOn {
-            arr.append(Int(totalString)!)
-            if currentExpression == "+" {
-                for i in arr {
-                    total += i
-                }
-            }
-            totalString = ""
-            label_answer.text = String(total)
-            textView_work.text = ""
-            count = 0
-            total = 0
-        } else {
             total += Int(totalString)!
             count += 1
             exhistory.append(totalString)
             exhistory.append(" + ")
-        }
         totalString = ""
     }
     
     @IBAction func buttonMinus(_ sender: Any) {
         textView_work.text = textView_work.text + " - "
         currentExpression = "-"
-        if rpn.isOn {
-            arr.append(Int(totalString)!)
-            if currentExpression == "-" {
-                var index = 0
-                for i in arr {
-                    if(index == 0) {
-                        total = i
-                    }
-                    total -= i
-                    index += 1
-                }
-            }
-            totalString = ""
-            label_answer.text = String(total)
-            textView_work.text = ""
-            count = 0
-            total = 0
-        } else {
+       
             if (count == 0) {
                 total += Int(totalString)!
             } else {
@@ -151,39 +116,17 @@ class ViewController: UIViewController {
             exhistory.append(totalString)
             exhistory.append(" - ")
             count += 1
-        }
         totalString = ""
     }
     
     @IBAction func buttonMultiply(_ sender: Any) {
         textView_work.text = textView_work.text + " x "
         currentExpression = "x"
-        if rpn.isOn {
-            arr.append(Int(totalString)!)
-            total = 1
-            if currentExpression == "x" {
-                var index = 0
-                for i in arr {
-                    if index == 0 {
-                        total = i
-                    }
-                    
-                    total *= i
-                    index += 1
-                }
-            }
-            totalString = ""
-            label_answer.text = String(total)
-            textView_work.text = ""
-            count = 0
-            total = 0
-        } else {
             total += Int(totalString)!
             count += 1
             exhistory.append(totalString)
             exhistory.append(" * ")
-        }
-        totalString = ""
+            totalString = ""
     }
     
     @IBAction func buttonDivide(_ sender: Any) {
@@ -207,9 +150,6 @@ class ViewController: UIViewController {
     }
     
     @IBAction func buttonEquals(_ sender: Any) {
-        if rpn.isOn {
-            equalsButton.isEnabled = false
-        } else {
             equalsButton.isEnabled = true
             if currentExpression == "+" {
                 total += Int(totalString)!
@@ -247,7 +187,7 @@ class ViewController: UIViewController {
             history.append(historyIndex)
             exhistory = [String]()
             updateHistory()
-        }
+        
     }
     
     @IBAction func buttonClear(_ sender: Any) {
@@ -263,20 +203,8 @@ class ViewController: UIViewController {
         textView_work.text = textView_work.text + " count "
         currentExpression = "count"
         arr.append(Int(totalString)!)
-        if rpn.isOn {
-            if currentExpression == "count" {
-                for i in arr {
-                    count += 1
-                }
-            }
-            totalString = ""
-            label_answer.text = String(count)
-            textView_work.text = ""
-            count = 0
-            total = 0
-        } else {
+        
             count += 1
-        }
         totalString = ""
     }
 
@@ -284,23 +212,10 @@ class ViewController: UIViewController {
         textView_work.text = textView_work.text + " avg "
         currentExpression = "avg"
         
-        if rpn.isOn {
-            arr.append(Int(totalString)!)
-            if currentExpression == "avg" {
-                for i in arr {
-                    total += i
-                }
-            }
-            totalString = ""
-            label_answer.text = String(total/arr.count)
-            textView_work.text = ""
-            count = 0
-            total = 0
-        } else {
+       
             total += Int(totalString)!
             count += 1
             totalString = ""
-        }
     }
     
     @IBAction func buttonFact(_ sender: Any) {
@@ -318,15 +233,7 @@ class ViewController: UIViewController {
     }
     
     @IBAction func buttonEnter(_ sender: Any) {
-        /*if rpn.isOn {
-            arr.append(Int(totalString)!)
-            totalString = ""
-            textView_work.text = textView_work.text + "  "
-            
-        }*/
-        /*let myVC = storyboard?.instantiateViewController(withIdentifier: "SecondVC") as! ViewController2
-        myVC.stringPassed = "TEST"
-        navigationController?.pushViewController(myVC, animated: true)*/
+
     }
     
     func updateHistory() {

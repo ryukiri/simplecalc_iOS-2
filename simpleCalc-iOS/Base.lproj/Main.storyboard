@@ -54,47 +54,40 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="414" height="102"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TwX-T9-4Xb">
-                                                        <rect key="frame" x="0.0" y="0.0" width="59.333333333333336" height="102"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="69.333333333333329" height="102"/>
                                                         <state key="normal" title="count"/>
                                                         <connections>
                                                             <action selector="buttonCount:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2Pj-AA-b3p"/>
                                                         </connections>
                                                     </button>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iBc-09-jTP">
-                                                        <rect key="frame" x="59.333333333333329" y="0.0" width="59.333333333333329" height="102"/>
+                                                        <rect key="frame" x="69.333333333333314" y="0.0" width="68.666666666666686" height="102"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </view>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NKy-rK-FrC">
-                                                        <rect key="frame" x="118.66666666666667" y="0.0" width="58.666666666666671" height="102"/>
+                                                        <rect key="frame" x="138" y="0.0" width="68.666666666666686" height="102"/>
                                                         <state key="normal" title="avg"/>
                                                         <connections>
                                                             <action selector="buttonAvg:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gs1-xU-PwS"/>
                                                         </connections>
                                                     </button>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LfC-Ma-fxa">
-                                                        <rect key="frame" x="177.33333333333334" y="0.0" width="58.333333333333343" height="102"/>
+                                                        <rect key="frame" x="206.66666666666666" y="0.0" width="68.999999999999972" height="102"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </view>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c3M-43-2n5">
-                                                        <rect key="frame" x="235.66666666666666" y="0.0" width="59.666666666666657" height="102"/>
+                                                        <rect key="frame" x="275.66666666666669" y="0.0" width="69.333333333333314" height="102"/>
                                                         <state key="normal" title="fact"/>
                                                         <connections>
                                                             <action selector="buttonFact:" destination="BYZ-38-t0r" eventType="touchUpInside" id="oAU-00-oTM"/>
                                                         </connections>
                                                     </button>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BZg-0R-VLi">
-                                                        <rect key="frame" x="295.33333333333331" y="0.0" width="59.333333333333314" height="102"/>
+                                                        <rect key="frame" x="345" y="0.0" width="69" height="102"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </view>
-                                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="qMN-bU-XUC">
-                                                        <rect key="frame" x="354.66666666666669" y="0.0" width="61.333333333333314" height="102"/>
-                                                        <connections>
-                                                            <action selector="onSwitchListener:" destination="BYZ-38-t0r" eventType="valueChanged" id="pbT-BO-MRC"/>
-                                                        </connections>
-                                                    </switch>
                                                 </subviews>
                                                 <constraints>
-                                                    <constraint firstItem="qMN-bU-XUC" firstAttribute="width" secondItem="TwX-T9-4Xb" secondAttribute="width" id="0Nr-8h-5Cq"/>
                                                     <constraint firstItem="c3M-43-2n5" firstAttribute="width" secondItem="TwX-T9-4Xb" secondAttribute="width" id="1yC-eY-NX1"/>
                                                     <constraint firstItem="LfC-Ma-fxa" firstAttribute="width" secondItem="TwX-T9-4Xb" secondAttribute="width" id="2C9-4e-nxR"/>
                                                     <constraint firstItem="BZg-0R-VLi" firstAttribute="width" secondItem="TwX-T9-4Xb" secondAttribute="width" id="JdG-LV-fzi"/>
@@ -314,9 +307,9 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="lb9-g3-CxB">
                                                 <rect key="frame" x="0.0" y="510.33333333333343" width="414" height="101.66666666666669"/>
                                                 <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fQX-lD-mI4">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fQX-lD-mI4">
                                                         <rect key="frame" x="0.0" y="36" width="59.333333333333336" height="30"/>
-                                                        <state key="normal" title="Enter"/>
+                                                        <state key="normal" title="History"/>
                                                         <connections>
                                                             <action selector="buttonEnter:" destination="BYZ-38-t0r" eventType="touchDown" id="TZ7-h6-k3l"/>
                                                             <segue destination="TZ7-ke-spv" kind="show" id="4b6-ch-qG6"/>
@@ -481,7 +474,6 @@
                         <outlet property="minusButton" destination="Juf-jP-r5O" id="waE-Oh-hUS"/>
                         <outlet property="multiplyButton" destination="e2B-6i-Afb" id="ysx-vh-Xnx"/>
                         <outlet property="plusButton" destination="VmS-jw-KxO" id="1co-xf-1dx"/>
-                        <outlet property="rpn" destination="qMN-bU-XUC" id="gpQ-UJ-qsy"/>
                         <outlet property="textView_work" destination="fTe-pf-KeV" id="xef-aM-l0R"/>
                     </connections>
                 </viewController>

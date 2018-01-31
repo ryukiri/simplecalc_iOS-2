@@ -31,6 +31,7 @@ class ViewController2: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         var vc = segue.destination as! ViewController
+        vc.history = history
     }
     
     /*
