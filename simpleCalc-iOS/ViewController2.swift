@@ -9,19 +9,30 @@
 import UIKit
 
 class ViewController2: UIViewController {
-
+    @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak var label: UILabel!
+    var labelText: String!
+    var stringPassed = "LABEL"
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        label.text = labelText
+        //print(stringPassed)
+        //print(labelText)
 
         // Do any additional setup after loading the view.
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        var vc = segue.destination as! ViewController
+        
+    }
+    
     /*
     // MARK: - Navigation
 

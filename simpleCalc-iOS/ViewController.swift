@@ -246,7 +246,7 @@ class ViewController: UIViewController {
             }
             history.append(historyIndex)
             exhistory = [String]()
-            print(history)
+            updateHistory()
         }
     }
     
@@ -300,8 +300,6 @@ class ViewController: UIViewController {
             total += Int(totalString)!
             count += 1
             totalString = ""
-            print(total)
-            print(count)
         }
     }
     
@@ -320,11 +318,29 @@ class ViewController: UIViewController {
     }
     
     @IBAction func buttonEnter(_ sender: Any) {
-        if rpn.isOn {
+        /*if rpn.isOn {
             arr.append(Int(totalString)!)
             totalString = ""
             textView_work.text = textView_work.text + "  "
-        }
+            
+        }*/
+        let myVC = storyboard?.instantiateViewController(withIdentifier: "SecondVC") as! ViewController2
+        myVC.stringPassed = "TEST"
+        navigationController?.pushViewController(myVC, animated: true)
+    }
+    
+    func updateHistory() {
+        //let viewController2:UIViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ViewController") as UIViewController
+        
+        /*let vc2: ViewController2  = storyboard?.instantiateViewController(withIdentifier: "viewcontrol2") as! ViewController2
+        vc2.labelText = "TEST"
+        print(vc2.labelText)
+        self.navigationController?.pushViewController(vc2, animated: true)*/
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        var vc2 = segue.destination as! ViewController2
+        vc2.labelText = "TEST"
     }
     
 }

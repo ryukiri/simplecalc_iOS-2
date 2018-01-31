@@ -319,6 +319,7 @@
                                                         <state key="normal" title="Enter"/>
                                                         <connections>
                                                             <action selector="buttonEnter:" destination="BYZ-38-t0r" eventType="touchDown" id="TZ7-h6-k3l"/>
+                                                            <segue destination="TZ7-ke-spv" kind="show" id="4b6-ch-qG6"/>
                                                         </connections>
                                                     </button>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UMW-JK-gzP">
@@ -488,10 +489,10 @@
             </objects>
             <point key="canvasLocation" x="135.9375" y="130.01464128843338"/>
         </scene>
-        <!--View Controller-->
+        <!--View Controller2-->
         <scene sceneID="kzZ-3u-JKQ">
             <objects>
-                <viewController id="TZ7-ke-spv" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SecondVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="TZ7-ke-spv" customClass="ViewController2" customModule="simpleCalc_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="zfa-2v-VNl">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -506,6 +507,13 @@
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="u7a-ol-6FR">
                                 <rect key="frame" x="20" y="58" width="374" height="658"/>
                             </scrollView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YoP-tQ-Vl6">
+                                <rect key="frame" x="144" y="36" width="123" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -518,6 +526,10 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="K2y-Ca-SY3"/>
                     </view>
+                    <connections>
+                        <outlet property="label" destination="YoP-tQ-Vl6" id="ceR-qa-Pz5"/>
+                        <outlet property="scrollView" destination="u7a-ol-6FR" id="rht-OL-vUg"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jkh-FD-eTC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
