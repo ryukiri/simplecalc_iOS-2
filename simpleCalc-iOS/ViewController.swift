@@ -88,18 +88,13 @@ class ViewController: UIViewController {
         totalString += "9"
     }
     
-    @IBAction func buttonDot(_ sender: Any) {
-        //textView_work.text = textView_work.text + "."
-        //totalString += "."
-    }
-    
     @IBAction func buttonAdd(_ sender: Any) {
         textView_work.text = textView_work.text + " + "
         currentExpression = "+"
-            total += Int(totalString)!
-            count += 1
-            exhistory.append(totalString)
-            exhistory.append(" + ")
+        total += Int(totalString)!
+        count += 1
+        exhistory.append(totalString)
+        exhistory.append(" + ")
         totalString = ""
     }
     
@@ -107,35 +102,35 @@ class ViewController: UIViewController {
         textView_work.text = textView_work.text + " - "
         currentExpression = "-"
        
-            if (count == 0) {
-                total += Int(totalString)!
-            } else {
-                total -= Int(totalString)!
-            }
-            exhistory.append(totalString)
-            exhistory.append(" - ")
-            count += 1
+        if (count == 0) {
+            total += Int(totalString)!
+        } else {
+            total -= Int(totalString)!
+        }
+        exhistory.append(totalString)
+        exhistory.append(" - ")
+        count += 1
         totalString = ""
     }
     
     @IBAction func buttonMultiply(_ sender: Any) {
         textView_work.text = textView_work.text + " x "
         currentExpression = "x"
-            total += Int(totalString)!
-            count += 1
-            exhistory.append(totalString)
-            exhistory.append(" * ")
-            totalString = ""
+        total += Int(totalString)!
+        count += 1
+        exhistory.append(totalString)
+        exhistory.append(" * ")
+        totalString = ""
     }
     
     @IBAction func buttonDivide(_ sender: Any) {
         textView_work.text = textView_work.text + " / "
         currentExpression = "/"
         total += Int(totalString)!
-        totalString = ""
         count += 1
         exhistory.append(totalString)
         exhistory.append(" / ")
+        totalString = ""
     }
     
     @IBAction func buttonMod(_ sender: Any) {
@@ -185,7 +180,6 @@ class ViewController: UIViewController {
             }
             history.append(historyIndex)
             exhistory = [String]()
-            updateHistory()
         
     }
     
@@ -219,7 +213,6 @@ class ViewController: UIViewController {
     
     @IBAction func buttonFact(_ sender: Any) {
         let topNum = Int(totalString)!
-        print(topNum)
         for i in stride(from: topNum, to: 1, by: -1) {
             if (total == 0) {
                 total = topNum
@@ -233,15 +226,6 @@ class ViewController: UIViewController {
     
     @IBAction func buttonEnter(_ sender: Any) {
 
-    }
-    
-    func updateHistory() {
-        //let viewController2:UIViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ViewController") as UIViewController
-        
-        /*let vc2: ViewController2  = storyboard?.instantiateViewController(withIdentifier: "viewcontrol2") as! ViewController2
-        vc2.labelText = "TEST"
-        print(vc2.labelText)
-        self.navigationController?.pushViewController(vc2, animated: true)*/
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
