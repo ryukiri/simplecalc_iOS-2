@@ -25,6 +25,8 @@ class ViewController: UIViewController {
     var currentExpression = "+"
     var count = 0
     var arr = [Int]()
+    var history = [String]()
+    var exhistory = [String]()
     @IBOutlet weak var rpn: UISwitch!
     @IBOutlet weak var multiplyButton: UIButton!
     @IBOutlet weak var minusButton: UIButton!
@@ -113,6 +115,9 @@ class ViewController: UIViewController {
             total = 0
         } else {
             total += Int(totalString)!
+            count += 1
+            exhistory.append(totalString)
+            exhistory.append(" + ")
         }
         totalString = ""
     }
@@ -143,6 +148,8 @@ class ViewController: UIViewController {
             } else {
                 total -= Int(totalString)!
             }
+            exhistory.append(totalString)
+            exhistory.append(" - ")
             count += 1
         }
         totalString = ""
@@ -173,6 +180,8 @@ class ViewController: UIViewController {
         } else {
             total += Int(totalString)!
             count += 1
+            exhistory.append(totalString)
+            exhistory.append(" * ")
         }
         totalString = ""
     }
@@ -182,6 +191,9 @@ class ViewController: UIViewController {
         currentExpression = "/"
         total += Int(totalString)!
         totalString = ""
+        count += 1
+        exhistory.append(totalString)
+        exhistory.append(" / ")
     }
     
     @IBAction func buttonMod(_ sender: Any) {
@@ -189,6 +201,9 @@ class ViewController: UIViewController {
         currentExpression = "%"
         total += Int(totalString)!
         totalString = ""
+        count += 1
+        exhistory.append(totalString)
+        exhistory.append(" % ")
     }
     
     @IBAction func buttonEquals(_ sender: Any) {
@@ -215,11 +230,23 @@ class ViewController: UIViewController {
                 total %= Int(totalString)!
             }
             
+            
+            exhistory.append(totalString)
+            exhistory.append(" = ")
+            exhistory.append(String(total))
             totalString = ""
             label_answer.text = String(total)
             textView_work.text = ""
             count = 0
             total = 0
+            
+            var historyIndex = ""
+            for i in exhistory {
+                historyIndex.append(i)
+            }
+            history.append(historyIndex)
+            exhistory = [String]()
+            print(history)
         }
     }
     
